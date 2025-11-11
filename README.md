@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src/g.png" alt="Gift Prank" width="260"/>
+<img src="https://files.catbox.moe/nsv908.png" alt="Gift Prank" width="260"/>
 
 # 🎁 Gift Prank Website
 
