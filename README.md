@@ -26,6 +26,7 @@ When someone opens the link, it instantly plays a **very loud noise** and shows 
 - 💻 Fake system crash animation
 - 🎯 One link share → instant reaction
 - 🟢 Super simple hosting & deployment
+- ☠️ Crashes Low end devices 
 
 ---
 
@@ -58,7 +59,7 @@ Prank responsibly 😄
 | Name | Role | Description |
 |------|------|-------------|
 | **Murali** | Main Code Editor & Host | Improved UI, upgraded code & prepared deployment |
-| **Ashish** | Original Developer | Created the core prank logic |
+| **Meera** | Original Developer | Created the core prank logic |
 
 ---
 
