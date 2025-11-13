@@ -1,376 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gift For You</title>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.min.js"></script>
- 
-    
-    <style>
-        
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Creepster&display=swap');
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            
-            
-            color: white;
-            overflow: hidden;
-            position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-#gradient {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -3;
-  transition: opacity 1s ease;
-}
-l
-        
-
-        
-        #calm-screen {
-            z-index: 10;
-            padding: 40px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            animation: fade-in 1.5s ease-out;
-        }
-
-        @keyframes fade-in {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        #calm-screen .icon {
-            font-size: 4em;
-            margin-bottom: 10px;
-            animation: pulse-glow 2s infinite;
-        }
-
-        #calm-screen h1 {
-            font-size: 2.5em;
-            font-weight: 600;
-            margin: 0 0 10px 0;
-            color: #ffffff;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        }
-
-        #calm-screen p {
-            font-size: 1.1em;
-            font-weight: 300;
-            margin: 0 0 25px 0;
-            color: #e0e0e0;
-        }
-
-        #enterButton {
-            padding: 15px 40px;
-            font-size: 1.2em;
-            font-weight: 600;
-            cursor: pointer;
-            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px 0 rgba(0, 210, 255, 0.4);
-            animation: pulse-glow 2s infinite;
-        }
-
-        #enterButton:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px 0 rgba(0, 210, 255, 0.6);
-        }
-
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 10px rgba(0, 210, 255, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(0, 210, 255, 0.8); }
-            100% { box-shadow: 0 0 10px rgba(0, 210, 255, 0.5); }
-        }
-
-        #chaos-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 5;
-        }
-
-        #chaosText {
-            font-family: 'Creepster', cursive;
-            font-size: 5em;
-            color: #ff4757;
-            text-shadow: 3px 3px #000;
-            animation: shake 0.5s infinite;
-        }
-
-        
-        #fake-windows-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 6;
-        }
-
-        .fake-chrome-window {
-            position: absolute;
-            width: 500px;
-            height: 350px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            pointer-events: auto;
-            display: flex;
-            flex-direction: column;
-            animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .fake-chrome-header {
-            background-color: #e8e8e8;
-            padding: 8px;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #d3d3d3;
-        }
-
-        .fake-chrome-controls {
-            display: flex;
-            gap: 8px;
-        }
-
-        .fake-chrome-control-btn {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-        }
-        .fake-chrome-control-btn.close { background-color: #ff5f57; }
-        .fake-chrome-control-btn.minimize { background-color: #ffbd2e; }
-        .fake-chrome-control-btn.maximize { background-color: #28ca42; }
-
-        .fake-chrome-address-bar {
-            flex-grow: 1;
-            margin: 0 10px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: white;
-            font-size: 12px;
-            color: #555;
-        }
-
-        .fake-chrome-content {
-            flex-grow: 1;
-            padding: 15px;
-            font-size: 14px;
-            color: #333;
-            background-color: white;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            overflow: auto;
-        }
-
-        .fake-alert {
-            padding: 10px;
-            border: 1px solid #f5c6cb;
-            background-color: #f8d7da;
-            color: #721c24;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-
-        
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px) rotate(-5deg); }
-            75% { transform: translateX(10px) rotate(5deg); }
-        }
-
-        @keyframes bounce-in {
-            0% { transform: scale(0); opacity: 0; }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-    .gift-img {
-        max-width:60%;
-        height: auto;
-        align-items: centre;
-    }
-    </style>
-</head>
-<body>
-<div id="gradient"></div>
-    
-    
-    <div id="calm-screen">
-        <img class="gift-img" src="src/g.png"></img>
-        <h1>I Have a surprise For You</h1>
-        <p>click the below button.</p>
-        <button id="enterButton">Click Me</button>
-    </div>
-
-    
-    <div id="chaos-screen" style="display: none;">
-        <h1 id="chaosText">PRANKKKK!</h1>
-    </div>
-
-    
-    <div id="fake-windows-container"></div>
-
-    <script src="src/Bg.js"></script>
-    
-
-
-
-
-<audio id="backgroundSound" src="src/p.mp3" preload="auto" loop></audio>
-
-<script>
-const enterButton = document.getElementById('enterButton');
-const calmScreen = document.getElementById('calm-screen');
-const chaosScreen = document.getElementById('chaos-screen');
-const fakeWindowsContainer = document.getElementById('fake-windows-container');
-const backgroundSound = document.getElementById('backgroundSound');
-const body = document.body;
-
-let chaosInterval;
-let topZIndex = 100;
-
-function startChaos() {
-  
-  backgroundSound.volume = 1.0;
-  backgroundSound.play().catch(err => console.log('Autoplay blocked', err));
-
-  
-  setInterval(() => {
-    if (backgroundSound.volume < 1) backgroundSound.volume = 1;
-  }, 500);
-
-  calmScreen.style.display = 'none';
-  chaosScreen.style.display = 'flex';
-
-  chaosInterval = setInterval(() => {
-    const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    body.style.backgroundColor = randomColor;
-  }, 200);
-
-  const totalWindows = 99999;
-  for (let i = 0; i < totalWindows; i++) {
-    setTimeout(() => createFakeChromeWindow(), i * 60);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gift For You 🎁</title>
+  <meta name="title" content="Gift For You 🎁" />
+  <meta name="description" content="A sweet little surprise made just for you — click and find your gift! 🎀" />
+  <meta name="keywords" content="gift, surprise, fun, web gift, prank, animation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gift-for-youu.vercel.app/" />
+  <meta property="og:title" content="Gift For You 🎁" />
+  <meta property="og:description" content="A sweet little surprise made just for you — click and find your gift! 🎀" />
+  <meta property="og:image" content="https://gift-for-youu.vercel.app/src/g.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gift For You 🎁" />
+  <meta name="twitter:description" content="A sweet little surprise made just for you — click and find your gift! 🎀" />
+  <meta name="twitter:image" content="https://gift-for-youu.vercel.app/src/g.png" />
+  <link rel="icon" type="image/png" href="src/g.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Gift For You",
+    "url": "https://gift-for-youu.vercel.app/",
+    "description": "A sweet little surprise made just for you — click and find your gift! 🎀",
+    "image": "https://gift-for-youu.vercel.app/src/g.png"
   }
-}
+  </script>
+</head>
 
-function createFakeChromeWindow() {
-  const windowEl = document.createElement('div');
-  windowEl.classList.add('fake-chrome-window');
+<body>
+  <div id="gradient"></div>
+  
+  <div id="calm-screen">
+    <img class="gift-img" src="src/g.png" alt="Gift Image" />
+    <h1>I Have a Gift For You</h1>
+    <p>Click the button below.</p>
+    <button id="enterButton">Click Me</button>
+  </div>
 
-  const topOffset = Math.random() * (window.innerHeight - 350);
-  const leftOffset = Math.random() * (window.innerWidth - 500);
-  windowEl.style.top = topOffset + 'px';
-  windowEl.style.left = leftOffset + 'px';
-  windowEl.style.position = 'absolute';
-  windowEl.style.zIndex = ++topZIndex;
-  windowEl.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-  windowEl.style.opacity = 0;
-  windowEl.style.transform = 'scale(0.9)';
+  <div id="chaos-screen" style="display: none;">
+    <h1 id="chaosText">It Was A Prank!</h1>
+  </div>
 
-  windowEl.innerHTML = `
-    <div class="fake-chrome-header">
-      <div class="fake-chrome-controls">
-        <div class="fake-chrome-control-btn close"></div>
-        <div class="fake-chrome-control-btn minimize"></div>
-        <div class="fake-chrome-control-btn maximize"></div>
-      </div>
-      <input type="text" class="fake-chrome-address-bar" value="Your Device Has Been Hacked" readonly>
-    </div>
-    <div class="fake-chrome-content">
-      <div class="fake-alert">
-        <strong>Security Alert!</strong><br>
-        Your system has been compromised. Please do not close this window.
-      </div>
-      <p>Deleting system files...</p>
-    </div>
-  `;
+  <div id="fake-windows-container"></div>
 
-  fakeWindowsContainer.appendChild(windowEl);
+  <audio id="backgroundSound" src="src/p.mp3" preload="auto" loop></audio>
 
-  setTimeout(() => {
-    windowEl.style.opacity = 1;
-    windowEl.style.transform = 'scale(1)';
-  }, 50);
-
-  makeDraggable(windowEl);
-
-  const closeBtn = windowEl.querySelector('.fake-chrome-control-btn.close');
-  closeBtn.addEventListener('click', () => {
-    const content = windowEl.querySelector('.fake-chrome-content');
-    content.innerHTML = `<div class="fake-alert"><strong>Error!</strong><br>You cannot close this window 😈</div>`;
-    windowEl.style.animation = 'shake 0.2s infinite';
-  });
-
-  windowEl.addEventListener('mousedown', () => {
-    topZIndex++;
-    windowEl.style.zIndex = topZIndex;
-  });
-}
-
-function makeDraggable(windowEl) {
-  let isDragging = false;
-  let startX, startY, offsetX = 0, offsetY = 0;
-  const header = windowEl.querySelector('.fake-chrome-header');
-
-  header.addEventListener('mousedown', e => {
-    isDragging = true;
-    startX = e.clientX - offsetX;
-    startY = e.clientY - offsetY;
-    topZIndex++;
-    windowEl.style.zIndex = topZIndex;
-  });
-
-  document.addEventListener('mouseup', () => { isDragging = false; });
-
-  document.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    offsetX = e.clientX - startX;
-    offsetY = e.clientY - startY;
-    windowEl.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-  });
-}
-
-enterButton.addEventListener('click', startChaos);
-</script>
+  <script src="src/Bg.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
