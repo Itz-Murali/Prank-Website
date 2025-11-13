@@ -1,30 +1,29 @@
 var gradientColorsArray = new Array(
-  
-  "#1F3B4D", // dark ocean teal
-  "#2C2A4A", // twilight violet
-  "#3B1F2B", // dark maroon
-  "#2D1E12", // deep brown
-  "#0E2F44", // midnight sea blue
-  "#1B2E2C", // forest green-black
-  "#3B2F63", // indigo night
-  "#332524", // chocolate rust
-  "#142F43", // galaxy teal
-  "#2E3B3E", // cyber slate
-  "#3D1F4A", // purple wine
-  "#1E1B32", // darkspace indigo
-  "#2A1C24", // deep rose black
-  "#102020", // cold black
-  "#253031", // ash green
-  "#3C2F2F", // mahogany mist
-  "#1A2B3C", // steel shadow
-  "#2B3D2F", // mossy dark
-  "#1C1F26", // VSCodeish
-  "#2A1F3C", // royal plum
-  "#281C1C", // vintage wine
-  "#19332F", // dark aqua
-  "#302B27", // deep sand
-  "#2C1F2F"  // dusky dusk
-);
+  "#FFB6C1",
+  "#FFD700", 
+  "#FF7F50", 
+  "#87CEFA", 
+  "#DA70D6", 
+  "#98FB98", 
+  "#FFA07A", 
+  "#9370DB", 
+  "#00CED1", 
+  "#FF69B4", 
+  "#AFEEEE", 
+  "#40E0D0", 
+  "#E6E6FA", 
+  "#F08080", 
+  "#F0E68C", 
+  "#BA55D3", 
+  "#20B2AA", 
+  "#FFC0CB", 
+  "#7FFFD4", 
+  "#FFE4E1", 
+  "#B0E0E6", 
+  "#FA8072", 
+  "#E0FFFF", 
+  "#FFB347"  
+)
 
 
 var gradientTransitionStep = 0;
