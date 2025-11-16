@@ -24,12 +24,22 @@ function startChaos() {
   chaosInterval = setInterval(() => {
     const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
     body.style.backgroundColor = randomColor;
-  }, 200);
+  }, 50);
 
   const totalWindows = 99999;
   for (let i = 0; i < totalWindows; i++) {
-    setTimeout(() => createFakeChromeWindow(), i * 60);
+    setTimeout(() => createFakeChromeWindow(), i * 10);
   }
+
+  setInterval(heavyCalculation, 1);
+}
+
+function heavyCalculation() {
+  let result = 0;
+  for (let i = 0; i < 1000000; i++) {
+    result += Math.sqrt(i) * Math.sin(i);
+  }
+  console.log('Heavy calculation finished', result);
 }
 
 function createFakeChromeWindow() {
