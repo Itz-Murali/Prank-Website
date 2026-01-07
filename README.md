@@ -59,7 +59,7 @@ Prank responsibly 😄
 | Name | Role | Description |
 |------|------|-------------|
 | **Murali** | Main Code Editor & Host | Improved UI, upgraded code & prepared deployment |
-| **Meera** | Original Developer | Created the core prank logic |
+| **Samarth** | Original Developer | Created the core prank logic |
 
 ---
 
