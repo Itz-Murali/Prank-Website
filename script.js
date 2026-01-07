@@ -50,4 +50,3 @@ const alertEl=document.getElementById('countdown-alert');
 let glitchOn=false;
 const glitchInterval=setInterval(()=>{glitchOn=!glitchOn;alertEl.style.opacity=glitchOn?'0.3':'1';numEl.classList.toggle('glitch',glitchOn)},50);
 const countInterval=setInterval(()=>{countdownValue--;if(countdownValue<=0){clearInterval(countInterval);clearInterval(glitchInterval);startChaos()}else{numEl.textContent=countdownValue}},1000)};
-</script>
