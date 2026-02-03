@@ -67,3 +67,9 @@ Prank responsibly 😄
 Thank you for using this prank.  
 Have fun & make your friends scream (just a little) 😈  
 **Happy Pranking! 🎁**
+
+
+
+## License
+This project is licensed under the MIT License.
+Unauthorized removal of copyright or credit is not allowed.
